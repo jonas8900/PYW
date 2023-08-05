@@ -7,7 +7,6 @@ export default function Header() {
   return (
     <>
       <StyledHeadlineDiv>
-        <Backbutton></Backbutton>
         <Link href="/">
           <StyledHeadline>Plan your wedding</StyledHeadline>
         </Link>
@@ -23,8 +22,9 @@ const StyledHeadline = styled.h1`
 const StyledHeadlineDiv = styled.div`
   padding: 1rem;
   border: 1px solid;
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  /*display grid for the return button, need to delete it at the end or change it into the DiyNotes*/
+  /* display: grid;
+  grid-template-columns: 1fr 5fr 1fr; */
   justify-content: space-between;
   width: 100%;
 `;

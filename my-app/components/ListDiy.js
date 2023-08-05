@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 
 export default function ListDiy({ cards, handleDelete }) {
   console.log(cards);
-  
 
   return (
     <>
@@ -19,7 +18,7 @@ export default function ListDiy({ cards, handleDelete }) {
               </StyledDeleteButton>
               <h3>{card.date}</h3>
               <p>{card.name}</p>
-              <Link href={`pages/Subpages/${card.id}`}>
+              <Link href={`/Subpages/${card.id}`}>
                 <StyledNotesButton>make notes</StyledNotesButton>
               </Link>
             </StyledFormDiv>
