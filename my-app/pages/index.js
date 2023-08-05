@@ -3,18 +3,18 @@ import Buttons from "../components/Buttons";
 import Header from "../components/Header";
 import Link from "next/link";
 
-export default function Home() {
+export default function Home({ }) {
   return (
     <>
       <Header />
       <StyledUlForHomescreen>
-        <StyledHomescreenLink href="/Subpages/Diy">
+        <StyledHomescreenLink href="/Diy">
           <Buttons>Do it Yourself</Buttons>
         </StyledHomescreenLink>
-        <StyledHomescreenLink href="/Subpages/Kaufen">
+        <StyledHomescreenLink href="/Kaufen">
           <Buttons>Buy</Buttons>
         </StyledHomescreenLink>
-        <StyledHomescreenLink href="/Subpages/Todo">
+        <StyledHomescreenLink href="/Todo">
           <Buttons>To Do</Buttons>
         </StyledHomescreenLink>
       </StyledUlForHomescreen>

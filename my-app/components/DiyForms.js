@@ -5,10 +5,14 @@ export default function DiyForms({ addOnSubmit }) {
   function handleSubmitEvent(event) {
     event.preventDefault();
 
+    const betterDateFormat = new Date(
+      event.target.shouldReady.value
+    ).toLocaleDateString("en-GB");
+
     const inputData = {
       id: uid(),
       name: event.target.name.value,
-      date: event.target.shouldReady.value,
+      date: betterDateFormat,
     };
 
     addOnSubmit(inputData);
@@ -18,8 +22,10 @@ export default function DiyForms({ addOnSubmit }) {
   return (
     <>
       <StyledForm onSubmit={handleSubmitEvent}>
+        <h2>Do it yourself</h2>
         <label htmlFor="DiyInput">Thema: </label>
         <textarea
+          rows="5"
           id="DiyInput"
           name="name"
           type="text"

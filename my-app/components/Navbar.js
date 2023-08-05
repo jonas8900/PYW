@@ -5,13 +5,13 @@ export default function Navbar() {
   return (
     <>
       <StyledList>
-        <StyledLinks href="/Subpages/Diy">
+        <StyledLinks href="/Diy">
           <StyledLi>Diy</StyledLi>
         </StyledLinks>
-        <StyledLinks href="/Subpages/Kaufen">
+        <StyledLinks href="/Kaufen">
           <StyledLi>Buy</StyledLi>
         </StyledLinks>
-        <StyledLinks href="/Subpages/Todo">
+        <StyledLinks href="/Todo">
           <StyledLi>To Do</StyledLi>
         </StyledLinks>
       </StyledList>
@@ -30,6 +30,7 @@ export const StyledList = styled.ul`
   border: 1px solid black;
   position: fixed;
   bottom: 0;
+  background-color: white;
 `;
 
 export const StyledLinks = styled(Link)`
