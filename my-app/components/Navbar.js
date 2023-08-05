@@ -5,13 +5,13 @@ export default function Navbar() {
   return (
     <>
       <StyledList>
-        <StyledLinks href="../pages/Subpages/Diy">
+        <StyledLinks href="/Subpages/Diy">
           <StyledLi>Diy</StyledLi>
         </StyledLinks>
-        <StyledLinks href="../pages/Subpages/Kaufen">
+        <StyledLinks href="/Subpages/Kaufen">
           <StyledLi>Buy</StyledLi>
         </StyledLinks>
-        <StyledLinks href="../pages/Subpages/Todo">
+        <StyledLinks href="/Subpages/Todo">
           <StyledLi>To Do</StyledLi>
         </StyledLinks>
       </StyledList>
