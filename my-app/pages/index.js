@@ -3,7 +3,7 @@ import Buttons from "../components/Buttons";
 import Header from "../components/Header";
 import Link from "next/link";
 
-export default function Home({ }) {
+export default function Home() {
   return (
     <>
       <Header />
@@ -27,10 +27,16 @@ const StyledUlForHomescreen = styled.ul`
   flex-direction: column;
   list-style: none;
   padding: 0;
-  margin: 4rem 10rem;
+  margin: 0;
+  width: 100%;
+  min-width: 200px;
+  align-self: center;
+  text-align: center;
 `;
 
 const StyledHomescreenLink = styled(Link)`
   text-align: center;
+  align-items: center;
+  justify-content: center;
   margin-left: 2rem;
 `;

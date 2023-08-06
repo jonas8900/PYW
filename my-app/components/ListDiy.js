@@ -2,8 +2,6 @@ import Link from "next/link";
 import { styled } from "styled-components";
 
 export default function ListDiy({ cards, handleDelete }) {
-  console.log(cards);
-
   return (
     <>
       <StyledCardDiv>
@@ -11,6 +9,7 @@ export default function ListDiy({ cards, handleDelete }) {
           <>
             <StyledFormDiv key={card.id}>
               <StyledDeleteButton
+                key={card.id}
                 onClick={() => handleDelete(card.id)}
                 type="button"
               >
@@ -35,7 +34,7 @@ const StyledCardDiv = styled.div`
   margin: 4rem;
 `;
 
-const StyledFormDiv = styled.div`
+const StyledFormDiv = styled.section`
   position: relative;
   transition: all 400ms;
   width: 50%;
