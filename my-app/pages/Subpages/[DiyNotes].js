@@ -14,25 +14,28 @@ export default function DiyNotesRouter({ cards }) {
 
   const currentCards = cards.filter((card) => card.id === currentId);
 
+  const filteredDates = dates.filter((date) => date.parentID === currentId);
+  console.log(filteredDates);
+
   function handleSubmitCardNote(event) {
-    event.preventDefault;
+    event.preventDefault();
 
     const inputNoteData = {
       id: uid(),
+      parentID: currentId,
       name: event.target.notiz.value,
     };
-    setDates([inputNoteData]);
+    setDates([...dates, inputNoteData]);
+    event.target.reset();
   }
-  console.log(dates);
-
   return (
     <>
       <Header />
       {currentCards.map((currentCard) => (
         <>
-          <StyledDiyNoteDiv key={currentId}>
+          <StyledDiyNoteDiv>
             <h4>{currentCard.name}</h4>
-            <StyledFormNoteDiv onSubmit={handleSubmitCardNote}>
+            <StyledFormNoteDiv key={currentId} onSubmit={handleSubmitCardNote}>
               <label htmlFor="cardDetail">Notizen: </label>
               <textarea
                 id="cardDetail"
@@ -46,9 +49,9 @@ export default function DiyNotesRouter({ cards }) {
           </StyledDiyNoteDiv>
         </>
       ))}
-      {dates.map((data) => (
+      {filteredDates.map((data) => (
         <>
-          <p>{data.name}</p>
+          <p key={data.id}>{data.name}</p>
         </>
       ))}
 
