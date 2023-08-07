@@ -6,22 +6,20 @@ export default function ListDiy({ cards, handleDelete }) {
     <>
       <StyledCardDiv>
         {cards.map((card) => (
-          <>
-            <StyledFormDiv key={card.id}>
-              <StyledDeleteButton
-                key={card.id}
-                onClick={() => handleDelete(card.id)}
-                type="button"
-              >
-                X
-              </StyledDeleteButton>
-              <h3>{card.date}</h3>
-              <p>{card.name}</p>
-              <Link href={`/Subpages/${card.id}`}>
-                <StyledNotesButton>make notes</StyledNotesButton>
-              </Link>
-            </StyledFormDiv>
-          </>
+          <StyledFormDiv key={card.id}>
+            <StyledDeleteButton
+              key={card.id}
+              onClick={() => handleDelete(card.id)}
+              type="button"
+            >
+              X
+            </StyledDeleteButton>
+            <h3>{card.date}</h3>
+            <p>{card.name}</p>
+            <Link href={`/Subpages/${card.id}`}>
+              <StyledNotesButton>make notes</StyledNotesButton>
+            </Link>
+          </StyledFormDiv>
         ))}
       </StyledCardDiv>
     </>

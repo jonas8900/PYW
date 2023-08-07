@@ -52,35 +52,31 @@ export default function DiyNotesRouter({ cards }) {
     <>
       <Header />
       {currentCards.map((currentCard) => (
-        <>
-          <StyledDiyNoteDiv>
-            <h4>{currentCard.name}</h4>
-            <StyledFormNoteDiv key={currentId} onSubmit={handleSubmitCardNote}>
-              <label htmlFor="cardDetail">Notizen: </label>
-              <textarea
-                id="cardDetail"
-                name="notiz"
-                rows="5"
-                placeholder="type your note here..."
-                required
-              ></textarea>
-              <button type="submit">Notiz hinzufügen</button>
-            </StyledFormNoteDiv>
-            <p>Stichtag: {currentCard.date}</p>
-          </StyledDiyNoteDiv>
-        </>
+        <StyledDiyNoteDiv key={currentId}>
+          <h4>{currentCard.name}</h4>
+          <StyledFormNoteDiv onSubmit={handleSubmitCardNote}>
+            <label htmlFor="cardDetail">Notizen: </label>
+            <textarea
+              id="cardDetail"
+              name="notiz"
+              rows="5"
+              placeholder="type your note here..."
+              required
+            ></textarea>
+            <button type="submit">Notiz hinzufügen</button>
+          </StyledFormNoteDiv>
+          <p>Stichtag: {currentCard.date}</p>
+        </StyledDiyNoteDiv>
       ))}
       <StyledUl>
         {filteredDates.map((data) => (
-          <>
-            <StyledListItem>
-              <p key={data.id}>{data.name}</p>
-              <input
-                type="checkbox"
-                onClick={() => handleCheckboxToggle(data.id)}
-              ></input>
-            </StyledListItem>
-          </>
+          <StyledListItem key={data.id}>
+            <p>{data.name}</p>
+            <input
+              type="checkbox"
+              onClick={() => handleCheckboxToggle(data.id)}
+            ></input>
+          </StyledListItem>
         ))}
       </StyledUl>
 
