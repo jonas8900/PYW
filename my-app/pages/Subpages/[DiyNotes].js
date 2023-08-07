@@ -36,17 +36,10 @@ export default function DiyNotesRouter({ cards }) {
     }
   }
 
-  console.log(dates);
-  /*if (artPieceInfo) {
-    setArtPiecesInfo(
-      artPiecesInfo.map((piece) =>
-        piece.slug === slug ? { slug, isFavorite: !piece.isFavorite } : piece
-      )
-    );
-  } else {
-    setArtPiecesInfo([...artPiecesInfo, { slug, isFavorite: true }]);
+  function handleDeleteNoteButton(id) {
+    setDates(dates.filter((filteredDate) => filteredDate.id !== id));
   }
-}*/
+  console.log(dates);
 
   return (
     <>
@@ -74,8 +67,17 @@ export default function DiyNotesRouter({ cards }) {
             <p>{data.name}</p>
             <input
               type="checkbox"
-              onClick={() => handleCheckboxToggle(data.id)}
+              onChange={() => handleCheckboxToggle(data.id)}
+              checked={data.isDone}
             ></input>
+            {data.isDone && (
+              <button
+                type="button"
+                onClick={() => handleDeleteNoteButton(data.id)}
+              >
+                Delete
+              </button>
+            )}
           </StyledListItem>
         ))}
       </StyledUl>
